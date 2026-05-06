@@ -1,0 +1,16 @@
+{
+  "name": "Diamond Canvassing",
+  "short_name": "Diamond",
+  "description": "Family-run canvassing specialists for cleaning businesses.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#030303",
+  "theme_color": "#030303",
+  "icons": [
+    {
+      "src": "assets/favicon.jpg",
+      "sizes": "256x256",
+      "type": "image/jpeg"
+    }
+  ]
+}
