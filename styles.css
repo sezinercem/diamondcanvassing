@@ -113,9 +113,11 @@ img {
 .hero {
   position: relative;
   display: grid;
+  justify-items: center;
   min-height: 92vh;
   overflow: hidden;
   padding: 9rem clamp(1rem, 4vw, 3.5rem) 3rem;
+  text-align: center;
 }
 
 .hero-media,
@@ -161,6 +163,8 @@ p {
 
 h1 {
   max-width: 11ch;
+  margin-right: auto;
+  margin-left: auto;
   margin-bottom: 1.2rem;
   font-size: clamp(3rem, 5.7vw, 5.9rem);
   line-height: 0.94;
@@ -187,6 +191,8 @@ p {
 
 .hero-copy {
   max-width: 650px;
+  margin-right: auto;
+  margin-left: auto;
   margin-bottom: 2rem;
   font-size: clamp(1.05rem, 1.5vw, 1.3rem);
 }
@@ -198,6 +204,10 @@ p {
 .split {
   display: flex;
   gap: 1rem;
+}
+
+.hero-actions {
+  justify-content: center;
 }
 
 .button {
