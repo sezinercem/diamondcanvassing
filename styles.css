@@ -372,15 +372,20 @@ p {
   padding: 10rem clamp(1rem, 4vw, 3.5rem) 4rem;
   border-bottom: 1px solid var(--line);
   background: #ffffff;
+  text-align: center;
 }
 
 .page-hero h1 {
   max-width: 980px;
+  margin-right: auto;
+  margin-left: auto;
   font-size: clamp(3rem, 7vw, 6.8rem);
 }
 
 .page-hero p:not(.eyebrow) {
   max-width: 720px;
+  margin-right: auto;
+  margin-left: auto;
   font-size: 1.1rem;
 }
 
