@@ -142,7 +142,7 @@ img {
   position: relative;
   z-index: 2;
   align-self: center;
-  max-width: 42rem;
+  width: min(100%, 78rem);
 }
 
 .eyebrow {
@@ -162,7 +162,7 @@ p {
 }
 
 h1 {
-  max-width: 11ch;
+  max-width: 16ch;
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 1.2rem;
