@@ -113,6 +113,9 @@ img {
 .hero {
   position: relative;
   display: grid;
+  grid-template-columns: minmax(0, 0.4fr) minmax(20rem, 0.6fr);
+  align-items: center;
+  column-gap: clamp(2rem, 5vw, 6rem);
   min-height: 92vh;
   overflow: hidden;
   padding: 9rem clamp(1rem, 4vw, 3.5rem) 3rem;
@@ -139,8 +142,81 @@ img {
 .hero-content {
   position: relative;
   z-index: 2;
-  align-self: center;
-  max-width: 780px;
+  max-width: 42rem;
+}
+
+.hero-art {
+  position: relative;
+  z-index: 2;
+  justify-self: end;
+  width: min(100%, 42rem);
+}
+
+.route-map {
+  position: relative;
+  aspect-ratio: 1.25;
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(rgba(5, 5, 5, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(5, 5, 5, 0.045) 1px, transparent 1px),
+    #ffffff;
+  background-size: 36px 36px;
+  box-shadow: 0 24px 80px var(--shadow);
+}
+
+.route-map svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: #050505;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.route-line {
+  stroke-width: 7;
+  stroke-dasharray: 18 18;
+  animation: routeMove 10s linear infinite;
+}
+
+.house,
+.clipboard,
+.spark {
+  stroke-width: 8;
+}
+
+.spark {
+  fill: #050505;
+  stroke-width: 0;
+  transform-origin: 392px 112px;
+  animation: sparklePulse 2.8s ease-in-out infinite;
+}
+
+.map-pin {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  background: #050505;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(5, 5, 5, 0.24);
+  animation: pinPulse 2.4s ease-in-out infinite;
+}
+
+.pin-a {
+  left: 12%;
+  bottom: 24%;
+}
+
+.pin-b {
+  left: 40%;
+  bottom: 38%;
+  animation-delay: 0.6s;
+}
+
+.pin-c {
+  right: 9%;
+  top: 35%;
+  animation-delay: 1.2s;
 }
 
 .eyebrow {
@@ -160,10 +236,10 @@ p {
 }
 
 h1 {
-  max-width: 12ch;
+  max-width: 11ch;
   margin-bottom: 1.2rem;
-  font-size: clamp(3.4rem, 8vw, 7.6rem);
-  line-height: 0.9;
+  font-size: clamp(3rem, 5.7vw, 5.9rem);
+  line-height: 0.94;
   letter-spacing: 0;
 }
 
@@ -230,6 +306,7 @@ p {
 .hero-stats {
   position: relative;
   z-index: 2;
+  grid-column: 1 / -1;
   align-self: end;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -552,6 +629,25 @@ p {
   }
 }
 
+@keyframes routeMove {
+  to {
+    stroke-dashoffset: -72;
+  }
+}
+
+@keyframes pinPulse {
+  50% {
+    box-shadow: 0 0 0 14px rgba(5, 5, 5, 0);
+    transform: scale(1.08);
+  }
+}
+
+@keyframes sparklePulse {
+  50% {
+    transform: scale(1.08);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -587,8 +683,14 @@ p {
   }
 
   .hero {
+    grid-template-columns: 1fr;
     min-height: 100vh;
     padding-top: 11rem;
+  }
+
+  .hero-art {
+    justify-self: stretch;
+    width: min(100%, 34rem);
   }
 
   .hero-overlay {
@@ -638,7 +740,7 @@ p {
   }
 
   h1 {
-    font-size: clamp(2.8rem, 16vw, 4.6rem);
+    font-size: clamp(2.6rem, 14vw, 4rem);
   }
 
   .button {
